@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}Welcome — To-Eat List{% endblock %}
+
+{% block body_class %}landing{% endblock %}
+
+{% block content %}
+  <main class="landing-hero">
+    <section class="left-column">
+      <h1>To-Eat-List</h1>
+      <a href="/dashboard" class="cta-button">Let's Plan</a>
+      <p class="tagline">Never forget what you wanted to eat</p>
+    </section>
+    <section class="right-column">
+      <div class="pillars" aria-hidden="true">
+        <div class="pillar"></div>
+        <div class="pillar"></div>
+        <div class="pillar"></div>
+        <div class="pillar"></div>
+      </div>
+    </section>
+  </main>
+{% endblock %}

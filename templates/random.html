@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}Random Food — To-Eat List{% endblock %}
+
+{% block content %}
+  <h2>Tonight's Suggestion</h2>
+  <div class="random-card random-reveal">
+    <p id="random-food" class="random-food">{{ food }}</p>
+    <div class="muted">Want this idea again? <a href="/random_pick" class="btn small">Try Another</a></div>
+
+    <hr>
+    <div class="add-block">
+      {% if lists and lists|length > 0 %}
+        <label>Save to list:
+          <select id="choose-list">
+            {% for l in lists %}
+              <option value="{{ l.id }}">{{ l.list_name }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <button id="add-to-list" class="btn">Add this to my list</button>
+      {% else %}
+        <p class="muted">You have no lists yet. Create one from your Dashboard.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const addBtn = document.getElementById('add-to-list');
+      if (!addBtn) return;
+      addBtn.addEventListener('click', async ()=>{
+        const sel = document.getElementById('choose-list');
+        const listId = parseInt(sel.value);
+        const food = document.getElementById('random-food').textContent.trim();
+        try {
+          const res = await fetch('/api/add_item', {
+            method:'POST',
+            credentials: 'same-origin',
+            headers:{'Content-Type':'application/json'},
+            body: JSON.stringify({list_id:listId, food_name:food})
+          });
+          const payload = await res.json().catch(()=>({}));
+          if (res.ok) {
+            alert(`Added "${payload.food_name || food}" to your list.`);
+          } else if (payload && payload.error) {
+            alert(`Could not add to list: ${payload.error}`);
+          } else {
+            alert('Could not add to list.');
+          }
+        } catch (err) {
+          console.error(err);
+          alert('Network error when adding to list.');
+        }
+      });
+    });
+  </script>
+{% endblock %}

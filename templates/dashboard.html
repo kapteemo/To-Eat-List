@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}Dashboard — To-Eat List{% endblock %}
+
+{% block body_class %}dashboard-page{% endblock %}
+
+{% block content %}
+  <div class="dashboard-hero">
+    <h2>What do you want to eat today, {{ username }}?</h2>
+    <div class="hub">
+      <a href="/create" class="hub-btn">Create Food List</a>
+      <a href="/random" class="hub-btn">Random Food</a>
+      <a href="/mylists" class="hub-btn">My Food List</a>
+    </div>
+  </div>
+
+  <!-- Recent lists removed to match blueprint -->
+{% endblock %}

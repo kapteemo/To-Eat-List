@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}Create List — To-Eat List{% endblock %}
+
+{% block body_class %}dashboard-page{% endblock %}
+
+{% block content %}
+  <h2>Create Food List</h2>
+  <form method="post" class="form">
+    <label>List Name
+      <input type="text" name="list_name" required>
+    </label>
+    <button type="submit" class="btn btn-primary">Create and Edit</button>
+  </form>
+{% endblock %}

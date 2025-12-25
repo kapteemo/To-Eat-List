@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}My Food Lists — To-Eat List{% endblock %}
+
+{% block body_class %}list-page{% endblock %}
+
+{% block content %}
+  <h2>My Food Lists</h2>
+  {% if expanded %}
+    <div class="lists-wrap">
+    {% for block in expanded %}
+      <div class="list-card" data-list-id="{{ block.list.id }}">
+        <div class="card-header">
+          <button class="list-toggle" aria-expanded="false"><span class="list-title">{{ block.list.list_name }}</span></button>
+          <div class="list-actions">
+            <button class="icon-btn edit-list" title="Edit list name">✏️</button>
+            <button class="icon-btn delete-list" title="Delete list">🗑️</button>
+          </div>
+        </div>
+        <div class="card-body">
+          {% if block['items'] %}
+            <div class="items">
+              {% for it in block['items'] %}
+                <div class="item-row" data-item-id="{{ it.id }}">
+                  <div class="item-left">
+                    <span class="item-text">{{ it.food_name }}</span>
+                  </div>
+                  <div class="item-actions">
+                    <button class="icon-btn edit-item" title="Edit item">✏️</button>
+                    <button class="icon-btn delete-item" title="Delete item">✖️</button>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          {% else %}
+            <p class="no-items">No items yet.</p>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  {% else %}
+    <p>You have no lists yet.</p>
+  {% endif %}
+
+  <script src="/static/my_lists.js" defer></script>
+{% endblock %}

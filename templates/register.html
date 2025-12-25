@@ -1,0 +1,24 @@
+{% extends "auth_layout.html" %}
+
+{% block title %}Register — To-Eat List{% endblock %}
+
+{% block body_class %}auth-page{% endblock %}
+
+{% block content %}
+  <div class="auth-card">
+    <h2>Register</h2>
+    <form action="/register" method="post" class="form">
+      <label>Username
+        <input type="text" name="username" required>
+      </label>
+      <label>Password
+        <input type="password" name="password" required>
+      </label>
+      <label>Confirm Password
+        <input type="password" name="confirm" required>
+      </label>
+      <button type="submit" class="auth-submit">Register</button>
+    </form>
+    <div class="auth-footer">Already have an account? <a href="/login">Sign in</a></div>
+  </div>
+{% endblock %}

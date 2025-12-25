@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}To Eat List{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body class="{% block body_class %}{% endblock %}">
+    <header class="site-header">
+      <div class="container">
+        <h1 class="brand">To-Eat List</h1>
+        <nav>
+          <a href="/">Home</a>
+          {% if session.get('user_id') %}
+            <a href="/dashboard">Dashboard</a>
+            <a href="/my_lists">My Food List</a>
+            <a href="/logout">Logout</a>
+          {% else %}
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+          {% endif %}
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="flash">
+            {% for msg in messages %}
+              <div class="flash-item">{{ msg }}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      {% block content %}{% endblock %}
+    </main>
+
+    <!-- footer removed per UI refinement -->
+  </body>
+</html>
