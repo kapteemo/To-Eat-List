@@ -56,9 +56,3 @@ I built this using Python and Flask for the back end, a SQL database to store al
 
 - `my_lists.js`  
   Makes the accordion work and handles editing. Opens and closes list cards when you click the headers. Changes text into input boxes when you edit list names and food items. Sends background requests to save or delete items. Removes deleted items from the page right away. Stops action buttons from opening the accordion when you click them.
-
-- `verify_routes.py`  
-  A test script that checks if all the main pages work correctly. Makes a fake user in the database, pretends to log in, and visits each main page (/dashboard, /create, /mylists, /random) to make sure they all load without errors.
-
-- `requirements.txt`  
-  Lists all the Python packages you need to download to run the project. Includes Flask and any other required libraries.
