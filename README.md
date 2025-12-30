@@ -31,7 +31,7 @@ I built this using Python and Flask for the back end, a SQL database to store al
   The base template that every page uses. Has the menu bar at the top, the header styling, and the footer. This gives every page the same look and navigation.
 
 - `index.html`  
-  The home page. Shows the big "To-Eat-List" title, the "Let's Plan" button, and the colored boxes. This page tells people what the site does with big bold text and eye-catching design.
+  The home page. Shows the big "To-Eat-List" title, the "Let's Plan" button, and the colored boxes.
 
 - `auth_layout.html`  
   A special template for login and signup pages. Removes the menu bar so these pages look cleaner and more focused. Uses a centered card layout that works better for forms.
