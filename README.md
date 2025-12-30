@@ -1,5 +1,7 @@
 # To-Eat-List
 
+#### Video Demo:  <URL HERE>
+
 ## Description
 
 This project is my final submission for CS50. Basically, it is a web application that works just like a "To-Do List," but specifically for food. Instead of writing down chores like "do the laundry," you may write down "Sushi from that new spot downtown." It helps users keep track of their cravings so they never have to face the "what should we eat?" struggle again. It also has a fun feature that picks a random food for you if you really can't decide.
