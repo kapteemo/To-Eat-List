@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is my final submission for CS50. Basically, it is a web application that works just like a "To-Do List," but specifically for food. Instead of writing down chores like "do the laundry," you write down "Sushi from that new spot downtown." It helps users keep track of their cravings so they never have to face the "what should we eat?" struggle again. It also has a fun feature that picks a random food for you if you really can't decide.
+This project is my final submission for CS50. Basically, it is a web application that works just like a "To-Do List," but specifically for food. Instead of writing down chores like "do the laundry," you may write down "Sushi from that new spot downtown." It helps users keep track of their cravings so they never have to face the "what should we eat?" struggle again. It also has a fun feature that picks a random food for you if you really can't decide.
 
 I built this using Python and Flask for the back end, a SQL database to store all the information, and HTML, CSS, and JavaScript for the front end. I wanted it to look warm and appetizing, so I used a special color palette with deep greens, creams, and oranges.
 
