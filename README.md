@@ -1,6 +1,6 @@
 # To-Eat-List
 
-#### Video Demo:  <URL HERE>
+#### Video Demo:  <https://youtu.be/EP5ilBmz5_o>
 
 ## Description
 
